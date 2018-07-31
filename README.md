@@ -36,8 +36,14 @@
 
 * A continuación se presenta un loop que cuenta las probabilidades de juegos ganados. Se pide que `value_counts` cuente los juegos no ganados y ganados, ignorando de la cantidad de juegos.
 
-* Para ello puede utilizar `np.where`, que devuelve un array con valores imputados cuando se satisface una condición. En este caso debemos clasificar como 0 cuando los juegos ganados sean igual a 0, y 1 cuando sean igual o mayor a 1.
-* Este array es difícil de trabajar, por lo que pueden transformarlo con `pd.Series` para utilizar `value_counts`.
+```python
+for i in [africa_df, europe_df, asia_df, northamerica_df, southamerica_df]:
+    print(i['juegos_ganados'].value_counts('%'))
+```
+
+
+* Para contar los juegos ganados puede utilizar `np.where`, que devuelve un array con valores imputados cuando se satisface una condición. En este caso debemos clasificar como 0 cuando los juegos ganados sean igual a 0, y 1 cuando sean igual o mayor a 1.
+* El array que devuelve `np.where` es difícil de trabajar, por lo que pueden transformarlo con `pd.Series` para utilizar `value_counts`.
 * En base a la refactorización del código, responda lo siguiente:
     - ¿Qué continente tuvo una mayor probabilidad de ganar juegos?
     - ¿Qué continente presentó un nivel similar entre juegos ganados y perdidos?
